@@ -31,7 +31,10 @@
             transition: all .8s;
             /* transform :rotateX(20deg) rotateY(20deg) !important; */
         }
-
+        .swiper-button-next:active,.swiper-button-prev:active{
+            transform: scale(0.7);
+            transition: all .3s;
+        }
         .overlayImg{
             height: 100%;
             width: 100%;
@@ -39,6 +42,7 @@
             top: 0;
             left: 0;
             transform:translateZ(60px);
+            transition: all .8s;
         }
         .overLineNextAnimation{
             animation: overLineNext .5s;
@@ -91,19 +95,31 @@
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <img class="backgroundImg" src="img/01.png" width="100%" alt="">
-                    <img class="overlayImg" src="img/01-2.png" width="100%" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img class="backgroundImg" src="img/02.png" width="100%" alt="">
-                    <img class="overlayImg" src="img/02-2.png" width="100%" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img class="backgroundImg" src="img/03.png" width="100%" alt="">
-                    <img class="overlayImg" src="img/03-2.png" width="100%" alt="">
-                </div>
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/01.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/01-2.png" width="100%" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/02.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/02-2.png" width="100%" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/03.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/03-2.png" width="100%" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/04.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/04-2.png" width="100%" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/05.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/05-2.png" width="100%" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="backgroundImg" src="img/06.png" width="100%" alt="">
+                        <img class="overlayImg" src="img/06-2.png" width="100%" alt="">
+                    </div>
                 </div>
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev">
@@ -155,13 +171,16 @@
         
         window.addEventListener('scroll',function(){
             const swiperSlide = document.querySelectorAll('.slot-3d .swiper-slide')
+            const swiperSlideOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg')
             const rectTop = adbertAdWrapper.getBoundingClientRect().top;
             const rectBottom = adbertAdWrapper.getBoundingClientRect().bottom;
 
             if( (screen.height-rectTop) / 585 * 100 > 40 &&  (screen.height-rectTop) / 585 * 100 < 70 ){
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(-20deg) rotateY(20deg)";
-
+                })
+                swiperSlideOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(60px)";
                 })
                 console.log("第一步")
             }
@@ -169,24 +188,35 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(-20deg) rotateY(-20deg)";
                 })
+                swiperSlideOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(60px)";
+                })
                 console.log("第二步")
             }
             if((screen.height-rectTop) / 585 * 100 >= 100 && rectBottom / 585 * 100 > 90 ){
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(0deg) rotateY(0deg)";
                 })
+                swiperSlideOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(0px)";
+                })
                 console.log("第三步")
             }
             if( rectBottom / 585 * 100 < 90 && rectBottom / 585 * 100 > 60 ){
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(20deg) rotateY(20deg)";
-
+                })
+                swiperSlideOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(60px)";
                 })
                 console.log("第四步")
             }
             if( rectBottom / 585 * 100 < 60 && rectBottom / 585 * 100 > 0 ){
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(20deg) rotateY(-20deg)";
+                })
+                swiperSlideOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(60px)";
                 })
                 console.log("第五步")
             }
