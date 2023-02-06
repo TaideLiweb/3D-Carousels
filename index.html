@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+        body{
+            font-size: 20px;
+            line-height: 1.7;
+        }
+        #adbert-ad-wrapper{
+            margin-bottom: 40px;
+            --swiper-navigation-size:0;
+        }
+        .swiper {
+            aspect-ratio: 2 / 3;
+            /* width: 533px;
+            height: 800px; */
+        }
+        .swiper-slide {
+            transform-style: preserve-3d;
+            transform-origin: center;
+            perspective: 1000px;
+            transition: all .8s;
+            /* transform :rotateX(20deg) rotateY(20deg) !important; */
+        }
+
+        .overlayImg{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform:translateZ(60px);
+        }
+        .overLineNextAnimation{
+            animation: overLineNext .5s;
+            animation-delay: 0.2s;
+        }
+        .overLinePrevAnimation{
+            animation: overLinePrev .5s;
+            animation-delay: 0.2s;
+        }
+        @keyframes overLineNext{
+            0%{
+                left: 0px
+                }
+            50%{
+                left: -60px
+                }
+            100%{
+                left: 0px
+                }
+        }
+        @keyframes overLinePrev{
+            0%{
+                left: 0px
+                }
+            50%{
+                left: 60px;
+                
+                }
+            100%{
+                left: 0px
+                }
+        }
+    </style>
+</head>
+<body>
+    <div>土耳其南部6日發生規模7.8地震，接著又出現模６.7地震，據傳已有多棟建築物倒塌，敍利亞、約旦、以色列等中東地區國家均有民眾感受到震感。
+
+        美國有線電視新聞網報導，第一起規模7.8地震發生在當地時間凌晨4時許（台灣時間早上9時許），美國地質調查所（USGS）表示，震央位於土國南部加濟安泰普省（Gaziantep）東部努爾達吉（Nurdagi）以東23公里處，震源深度為17.9公里。
+        土耳其6日規模7.8強震震央位置。（取自USGS）
+
+        在距離主震約11分鐘後則又再主震地點西北方向約32公里處，發生規模6.7的強烈餘震；在距離主震約19分鐘，則又發生規模5.6的強烈餘震。美聯社報導，地震已造成至少5人死亡，卡拉曼馬拉斯省（Kahramanmaras）已有多棟建物倒塌，民眾爭相逃到街上避難，社群平台流傳建有築物倒塌的影片。而在南部的奧斯曼尼亞（Osmaniye）省，已知有34棟建築物倒塌。
+
+        報導指出，據住在加濟安泰普市區的當地記者寇爾迪（Eyad Kourdi ）表示，他的家中許多物品都被地震震落墜地，許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。
+        許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。許多鄰居則急忙逃離家園，避免房屋倒塌被埋於瓦礫堆之下。
+    </div>
+
+    <div id="adbert-ad-wrapper">
+        <div class="slot-3d">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img class="backgroundImg" src="img/01.png" width="100%" alt="">
+                    <img class="overlayImg" src="img/01-2.png" width="100%" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="backgroundImg" src="img/02.png" width="100%" alt="">
+                    <img class="overlayImg" src="img/02-2.png" width="100%" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="backgroundImg" src="img/03.png" width="100%" alt="">
+                    <img class="overlayImg" src="img/03-2.png" width="100%" alt="">
+                </div>
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev">
+                    <img class="backgroundImg" src="img/左箭頭.png" width="50" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img class="backgroundImg" src="img/右箭頭.png" width="50" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        掌舵日本央行長達10年的總裁黑田東彥，將於4月8日卸任，外媒指出，日本政府正在考慮指派央行副總裁雨宮正佳接手他的職務。消息一出，讓日圓急貶至132，達3週以來新低。根據台銀今早牌告價，日圓現鈔賣出價一度重返「0.22字頭」，創近一個半月的新低。
+        《日本經濟新聞》報導，日本政府與執政黨正在溝通協調，預計本月向國會提交包括2位現任副總裁在內的繼任人事方案。據了解，多名日本政府與執政黨高層透露，日本政府擬任命現任央行副總裁雨宮正佳接手總裁一職。
+        報導指出，現任央行總裁黑田東彥，主導的異次元貨幣寬鬆政策在克服通貨緊縮方面取得成功，同時也導致市場功能下降和財政紀律寬鬆等狀況趨於明顯。為了在進行政策修正之際，避免對日本經濟和金融市場造成衝擊，下一任總裁人選需要擁有豐富的貨幣政策知識和經驗。報導指出，日本首相岸田文雄可能認為雨宮正佳持續參與異次元寬鬆政策，是接任總裁的合適人選。
+        政府考慮指派雨宮正佳擔任央行總裁的消息傳出後，日圓於今（6）日急貶，睽違3週跌至132。據報導，因為投資人認為此舉代表日本央行將維持貨幣寬鬆路線，考慮到日美利率差將擴大，許多人急售日圓。《路透社》指出，日圓本週可能還會出現大幅度波動。
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper_3D = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            spaceBetween: 20,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        function initAnimation (){
+            const swiperSlideAOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg')
+            swiperSlideAOverlayImg.forEach(element => {
+                element.classList.remove("overLineNextAnimation")
+                element.classList.remove("overLinePrevAnimation")
+            });
+        }
+        swiper_3D.on('slideNextTransitionStart', function () {
+            const swiperSlideActiveOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg')
+            initAnimation()
+            swiperSlideActiveOverlayImg.classList.add("overLineNextAnimation")
+        });
+        swiper_3D.on('slidePrevTransitionStart', function () {
+            const swiperSlideActiveOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg')
+            initAnimation()
+            swiperSlideActiveOverlayImg.classList.add("overLinePrevAnimation")
+        });
+        let adbertAdWrapper = document.getElementById('adbert-ad-wrapper')
+        
+        window.addEventListener('scroll',function(){
+            const swiperSlide = document.querySelectorAll('.slot-3d .swiper-slide')
+            const rectTop = adbertAdWrapper.getBoundingClientRect().top;
+            const rectBottom = adbertAdWrapper.getBoundingClientRect().bottom;
+
+            if( (screen.height-rectTop) / 585 * 100 > 40 &&  (screen.height-rectTop) / 585 * 100 < 70 ){
+                swiperSlide.forEach(element => {
+                    element.style.transform = "rotateX(-20deg) rotateY(20deg)";
+
+                })
+                console.log("第一步")
+            }
+            if( (screen.height-rectTop) / 585 * 100 > 70 &&  (screen.height-rectTop) / 585 * 100 < 100 ){
+                swiperSlide.forEach(element => {
+                    element.style.transform = "rotateX(-20deg) rotateY(-20deg)";
+                })
+                console.log("第二步")
+            }
+            if((screen.height-rectTop) / 585 * 100 >= 100 && rectBottom / 585 * 100 > 90 ){
+                swiperSlide.forEach(element => {
+                    element.style.transform = "rotateX(0deg) rotateY(0deg)";
+                })
+                console.log("第三步")
+            }
+            if( rectBottom / 585 * 100 < 90 && rectBottom / 585 * 100 > 60 ){
+                swiperSlide.forEach(element => {
+                    element.style.transform = "rotateX(20deg) rotateY(20deg)";
+
+                })
+                console.log("第四步")
+            }
+            if( rectBottom / 585 * 100 < 60 && rectBottom / 585 * 100 > 0 ){
+                swiperSlide.forEach(element => {
+                    element.style.transform = "rotateX(20deg) rotateY(-20deg)";
+                })
+                console.log("第五步")
+            }
+
+
+
+            
+            // 可算出離開範圍百分比 小於圖片高度時使用
+            // console.log(rectBottom / 585 * 100) 
+
+            // 可算出可視範圍百分比 screen.height-rectTop 大於零的時候 代表圖片出現
+            // console.log((screen.height-rectTop) / 585 * 100) 
+
+        })
+    </script>
+</body>
+</html>
