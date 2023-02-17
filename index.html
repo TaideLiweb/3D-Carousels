@@ -21,15 +21,12 @@
         }
         .swiper {
             aspect-ratio: 2 / 3;
-            /* width: 533px;
-            height: 800px; */
         }
         .swiper-slide {
             transform-style: preserve-3d;
             transform-origin: center;
             perspective: 1000px;
             transition: all .8s;
-            /* transform :rotateX(20deg) rotateY(20deg) !important; */
         }
         .swiper-button-next:active,.swiper-button-prev:active{
             transform: scale(0.7);
@@ -97,36 +94,37 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/01.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/01-2.png" width="100%" alt="">
+                        <img class="backgroundImg" src="歐吉汽車/BG_01.png" width="100%" alt="">
+                        <img class="overlayImg s" src="歐吉汽車/第一層_01.png" width="100%" alt="">
+                        <img class="overlayImg d" src="歐吉汽車/第二層_01.png" width="100%" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/02.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/02-2.png" width="100%" alt="">
+                        <img class="backgroundImg" src="歐吉汽車/BG_02.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第一層_02.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第二層_02.png" width="100%" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/03.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/03-2.png" width="100%" alt="">
+                        <img class="backgroundImg" src="歐吉汽車/BG_03.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第一層_03.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第二層_03.png" width="100%" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/04.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/04-2.png" width="100%" alt="">
+                        <img class="backgroundImg" src="歐吉汽車/BG_04.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第一層_04.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第二層_04.png" width="100%" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/05.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/05-2.png" width="100%" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="backgroundImg" src="img/06.png" width="100%" alt="">
-                        <img class="overlayImg" src="img/06-2.png" width="100%" alt="">
+                        <img class="backgroundImg" src="歐吉汽車/BG_05.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第一層_05.png" width="100%" alt="">
+                        <img class="overlayImg" src="歐吉汽車/第二層_05.png" width="100%" alt="">
                     </div>
                 </div>
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev">
-                    <img class="backgroundImg" src="img/左箭頭.png" width="50" alt="">
+                    <img class="backgroundImg" src="歐吉汽車/左箭頭.png" width="50" alt="">
                 </div>
                 <div class="swiper-button-next">
-                    <img class="backgroundImg" src="img/右箭頭.png" width="50" alt="">
+                    <img class="backgroundImg" src="歐吉汽車/右箭頭.png" width="50" alt="">
                 </div>
             </div>
         </div>
@@ -150,28 +148,35 @@
             },
         });
 
-        function initAnimation (){
-            const swiperSlideAOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg')
-            swiperSlideAOverlayImg.forEach(element => {
+        function initAnimation (className){
+            const swiperSlideActiveFirstOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg:nth-child(2)')
+            const swiperSlideActiveSecondOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg:nth-child(3)')
+            const swiperSlideFirstOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg:nth-child(2)')
+            const swiperSlideSecondOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg:nth-child(3)')
+            swiperSlideFirstOverlayImg.forEach(element => {
                 element.classList.remove("overLineNextAnimation")
                 element.classList.remove("overLinePrevAnimation")
             });
+            swiperSlideFirstOverlayImg.forEach(element => {
+                element.classList.remove("overLineNextAnimation")
+                element.classList.remove("overLinePrevAnimation")
+            });
+            swiperSlideActiveFirstOverlayImg.classList.add(className)
+            swiperSlideActiveSecondOverlayImg.classList.add(className)
         }
         swiper_3D.on('slideNextTransitionStart', function () {
-            const swiperSlideActiveOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg')
-            initAnimation()
-            swiperSlideActiveOverlayImg.classList.add("overLineNextAnimation")
+            initAnimation("overLineNextAnimation")
+
         });
         swiper_3D.on('slidePrevTransitionStart', function () {
-            const swiperSlideActiveOverlayImg = document.querySelector('.swiper .swiper-slide-active .overlayImg')
-            initAnimation()
-            swiperSlideActiveOverlayImg.classList.add("overLinePrevAnimation")
+            initAnimation("overLinePrevAnimation")
         });
         let adbertAdWrapper = document.getElementById('adbert-ad-wrapper')
         
         window.addEventListener('scroll',function(){
             const swiperSlide = document.querySelectorAll('.slot-3d .swiper-slide')
-            const swiperSlideOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg')
+            const swiperSlideFirstOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg:nth-child(2)')
+            const swiperSlideSecondOverlayImg = document.querySelectorAll('.slot-3d .swiper-slide .overlayImg:nth-child(3)')
             const rectTop = adbertAdWrapper.getBoundingClientRect().top;
             const rectBottom = adbertAdWrapper.getBoundingClientRect().bottom;
 
@@ -179,7 +184,10 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(-20deg) rotateY(20deg)";
                 })
-                swiperSlideOverlayImg.forEach(element => {
+                swiperSlideFirstOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(40px)";
+                })
+                swiperSlideSecondOverlayImg.forEach(element => {
                     element.style.transform = "translateZ(60px)";
                 })
                 console.log("第一步")
@@ -188,7 +196,10 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(-20deg) rotateY(-20deg)";
                 })
-                swiperSlideOverlayImg.forEach(element => {
+                swiperSlideFirstOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(40px)";
+                })
+                swiperSlideSecondOverlayImg.forEach(element => {
                     element.style.transform = "translateZ(60px)";
                 })
                 console.log("第二步")
@@ -197,7 +208,7 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(0deg) rotateY(0deg)";
                 })
-                swiperSlideOverlayImg.forEach(element => {
+                swiperSlideFirstOverlayImg.forEach(element => {
                     element.style.transform = "translateZ(0px)";
                 })
                 console.log("第三步")
@@ -206,7 +217,10 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(20deg) rotateY(20deg)";
                 })
-                swiperSlideOverlayImg.forEach(element => {
+                swiperSlideFirstOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(40px)";
+                })
+                swiperSlideSecondOverlayImg.forEach(element => {
                     element.style.transform = "translateZ(60px)";
                 })
                 console.log("第四步")
@@ -215,7 +229,10 @@
                 swiperSlide.forEach(element => {
                     element.style.transform = "rotateX(20deg) rotateY(-20deg)";
                 })
-                swiperSlideOverlayImg.forEach(element => {
+                swiperSlideFirstOverlayImg.forEach(element => {
+                    element.style.transform = "translateZ(40px)";
+                })
+                swiperSlideSecondOverlayImg.forEach(element => {
                     element.style.transform = "translateZ(60px)";
                 })
                 console.log("第五步")
